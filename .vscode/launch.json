@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Input読み込み/Output書き出し",
+            "runtimeExecutable": "node",
+            "runtimeArgs": [
+                "${workspaceFolder}/paiza_B158.js",
+                "<",
+                "${workspaceFolder}/paiza_B158.txt",
+                ">",
+                "${workspaceFolder}/output.txt"
+            ],
+            "shell": true,
+            "console": "integratedTerminal"
+        }
+    ]
+}
