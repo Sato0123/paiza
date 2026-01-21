@@ -27,3 +27,14 @@ reader.on('close', () => {
   const shop_sets = new Set(vegi_data.map((v)=>v.shop));
   console.log(shop_sets.size);
 });
+
+
+// 店ごとのループではなく、「野菜ごと」に最安値を考える
+const result = Array.from({ length: vegi }, (_, vegetableIndex) => {
+  // すべての店の中から、その野菜が一番安い店を探す
+  return shops.reduce((minShop, currentShop, shopId) => {
+    return currentShop[vegetableIndex] < minShop.price 
+      ? { shop: shopId, price: currentShopPrices[vegetableIndex] }
+      : minShop;
+  }, { shop: -1, price: Infinity });
+});
