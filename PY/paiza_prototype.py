@@ -1,2 +1,3 @@
-line = input()
-print("XXXXXX")
+import sys
+
+lines = sys.stdin.read().split("\n")
